@@ -1,0 +1,11 @@
+digraph ABR_test {
+	node [fontname="Arial", shape=record, width=2];
+	16 [label = "{<c> 16 | { <g> | <d>}}"];
+	16:g -> 7;
+	7 [label = "{<c> 7 | { <g> | <d> NULL}}"];
+	7:g -> 4;
+	4 [label = "{<c> 4 | { <g> NULL | <d> NULL}}"];
+	16:d -> 25;
+	25 [label = "{<c> 25 | { <g> NULL | <d> NULL}}"];
+}
+

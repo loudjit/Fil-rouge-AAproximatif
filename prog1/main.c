@@ -13,7 +13,8 @@
 int main(int argc, char ** argv) {
 	T_avl root = NULL; 
 	T_avlNode * pAux = NULL;
-    T_elt prénoms [] = lire(argc, argv);
+   	T_elt prénoms [] = lire(argc, argv);//Ce serait pratique si dans le code "lire", il créeait un tableau avec chaque ligne, au lieu de juste tout 
+	//afficher (si j'ai bien compris le code)
 
 //	T_elt srch;
 
@@ -22,11 +23,11 @@ int main(int argc, char ** argv) {
 
 	outputPath = "Programme_1/output";
 	
-	//on insère les <n> premiers prénoms de la liste.
-    int i;
-    for(i=0, i<= argv[3], i++) {
+	//on insère les <n> premiers prénoms de la liste
+	int i;
+    	for(i=0, i<= argv[3], i++) {
         insertAVL(&root, prénoms[i]);
-
+	}
 
 /*srch = 16;
 	pAux = searchAVL_it(root,srch); 
@@ -38,7 +39,8 @@ int main(int argc, char ** argv) {
 	printf("hauteur : %d\n",heightAVL(root));
 	printf("nb noeuds : %d\n",nbNodesAVL(root));
 */
-    createDotAVL(root, "root");
+    	createDotAVL(root, "root"); //Je comprends pas vraiment comment ça ça fonctionne, dans le programme de base ça met des erreurs donc bon...Si ça voulait bien afficher 
+	//quelque chose je comprendrais mais c'est pas le cas
 
 	return 0;
 }

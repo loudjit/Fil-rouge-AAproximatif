@@ -1,0 +1,1 @@
+int compare(int argc, const char * argv[]);

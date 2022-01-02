@@ -7,11 +7,37 @@
 /*  char adresse = argv[1];
 int nb_lignes = argv[2];  */
 
-int lire(int argc, char const *argv[]) {
+char lire(char adresse, int nb_lignes);
+
+
+int main(int argc, char const *argv[]) {
     char adresse = argv[1]; // arguments
     int nb_lignes = argv[2]; // <n>, qui va devenir un compteur
-    char lignes[nb_lignes]; //tableau pour stocker les lignes
-    int n = sizeof(lignes); // valeur fixe de <n>
+    int i = nb_lignes;
+
+    char l = lire(adresse, nb_lignes);
+    while (i!=0)
+        printf(l[i]);
+    return 0;
+}
+
+
+char lire(char adresse, int nb_lignes) {
+    /*char adresse = argv[1]; // arguments
+    int nb_lignes = argv[2]; // <n>, qui va devenir un compteur */
+    
+    
+    char * tab;
+
+    tab = malloc(nb_lignes * sizeof(adresse));
+
+    if( tab == NULL ){
+        printf(stderr,"Allocation impossible");
+        exit(EXIT_FAILURE);
+    }
+    
+    //char lignes[nb_lignes]; //tableau pour stocker les lignes
+    int n = abs(nb_lignes); // valeur fixe de <n>
 
     const char* filename = adresse; //adresse = "../Prenoms_V2/Prenoms/PrenomsV2.txt"
     
@@ -24,14 +50,16 @@ int lire(int argc, char const *argv[]) {
     size_t len = 0;
     while ((getline(&contents, &len, input_file) != -1) && (nb_lignes != 0)){//lecture ligne par ligne
         printf("%s", contents);
-        lignes[n - nb_lignes] = contents;
+        tab[n - nb_lignes] = contents;
         nb_lignes -= 1;
     }
 
+    
     fclose(input_file);
     free(contents);
 
-    return lignes;
+    return tab;
 
-    exit(EXIT_SUCCESS);  //il veut pas se compiler je comprends paaaas
+    exit(EXIT_SUCCESS);
 }
+

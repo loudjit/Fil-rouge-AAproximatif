@@ -25,13 +25,12 @@ int compare(const char * restrict une, const char * restrict deux)
     result = strcmp(ex1, ex2);
 
     /* cas identique (osef ça arrivera jamais) */
-    if (result == 0) printf("%s = %s\n", deux, une);
+    if (result == 0) return 0;// sinon printf("%s = %s\n", deux, une);
 
     /* la première dans l'ordre alphabétique est la plus petite */
     
-    if (result > 0) printf("%s < %s\n", deux, une);
+    if (result > 0) return 1;//printf("%s < %s\n", deux, une);
 
-    if (result < 0) printf("%s < %s\n", une, deux);
+    if (result < 0) return 2;//printf("%s < %s\n", une, deux);
 
-    return 0;
 }

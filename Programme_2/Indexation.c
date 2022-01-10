@@ -69,7 +69,7 @@ int main(int argc, char ** argv) {
 
 
     printf("Longueur des mots : %d\n",longueurMot);
-    printf("Nombre de mots : %d\n", i-1);
+    printf("Nombre de mots : %d\n", i);
     printf("Durée de construction : %lf \n",
                 (double)(t2-t1)/(double)clk_tck *1000);
     printf("Nombre de noeuds : %d\n", nbNodesAVL(root));

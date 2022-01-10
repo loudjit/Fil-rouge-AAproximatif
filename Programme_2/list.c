@@ -133,3 +133,8 @@ void freeList_rec(T_list l) {
 	}
 }
 
+T_list size_and_lastnode(T_list l) {
+	if (l == NULL) {
+		return(
+	}
+}
